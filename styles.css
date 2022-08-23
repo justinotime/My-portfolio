@@ -1,0 +1,13 @@
+.site-navbar {
+    margin-bottom: 0px;
+    z-index: 1999;
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right
+}
