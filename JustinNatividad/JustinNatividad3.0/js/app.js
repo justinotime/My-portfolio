@@ -1,7 +1,7 @@
+// Display Mobile Menu
 const toggle = document.querySelector('#mobile-menu'); /* Targetting navbar toggle */
 const menuLinks = document.querySelector('.navbar_menu'); /* Targetting ul class */
 
-// Display Mobile Menu
 const mobileMenu = () => {
     toggle.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
@@ -9,8 +9,21 @@ const mobileMenu = () => {
 
 toggle.addEventListener('click', mobileMenu);
 
-// Hero type Effect
 
+// Disappearing Navbar when scrolling down
+var prevScrollPos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+    }
+    else {
+        document.getElementById("navbar").style.top = "-80px";
+    }
+    prevScrollPos = currentScrollPos;
+}
+
+// Hero type Effect
 // ["Developer.", "Freelancer.", "Musician.", "UI/UX Designer."]
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;

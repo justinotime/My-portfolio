@@ -6,7 +6,7 @@
     scroll-behavior: smooth;
 }
 
-.navbar {
+#navbar {
     background: #fff;
     height: 80px;
     display: flex;
@@ -16,6 +16,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    transition: top 0.3s;
 }
 
 .navbar_container {
@@ -314,13 +315,18 @@ section {
     color: #45505b;
 }
 
-.section-title h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 120px;
-    height: 1px;
-    background: #ddd;
-    bottom: 1px;
-    left: calc(50% - 60px);
+
+.section-title p {
+    margin-bottom: 0;
 }
+
+
+
+/* Skill */
+
+.container_skills-content {
+    display: grid;
+    grid-template-rows: 1320px;
+    grid-template-columns: 180px;
+}
+
