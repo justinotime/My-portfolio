@@ -61,17 +61,16 @@ section {
 .sec1 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: rgba(161,228,38,0.849);
 }
 .sec2 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: slateblue;
+    background-color: #39A0F5;
 }
 .sec3 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: rgb(146, 205, 90);
+    background-color: #52E9AB;
 }
 .sec4 {
     display: none;
@@ -80,6 +79,19 @@ section {
 .sec5 {
     display: none;
     transform: translateY(0) scale(1);
+}
+
+.active {
+    display: block;
+    animation: scaleAnim 1s ease-in-out;
+    @keyframes scaleAnim {
+        0% {
+            transform: translateY(-100%) scaleY(0);
+        }
+        100% {
+            transform: translateY(0) scaleY(1);
+        }
+    }
 }
 
 // Controls
@@ -119,4 +131,72 @@ section {
             pointer-events: none;
         }
     }
+}
+
+// Header Content
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+
+    .left-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .h-shape {
+            transition: all .4s ease-in-out;
+            width: 65%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            clip-path: polygon(0 0, 0% 100%, 50% 100%);
+        }
+        .image {
+            position: absolute;
+            left: 400px;
+            margin: 10px;
+            height: 500px;
+            width: 400px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+    }
+
+    .right-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 18rem;
+        .name {
+            font-size: 3rem;
+            span {
+                color: var(--color-secondary);
+            }
+        }
+        .typewrite {
+            font-family: inherit;
+            font-size: 25px;
+            letter-spacing: 1px;
+            .cursor {
+                border-right: 0.10em solid;
+                letter-spacing: 3px;
+            }
+        }
+        p {
+            margin: 1.5rem 0;
+            line-height: 2rem;
+        }
+    }
+}
+
+// Indepdended compontents
+.main-btn {
+    border-radius: 30px;
+    color: inherit;
 }
